@@ -5,7 +5,13 @@ How ADB Works:
 - [Google Git](https://android.googlesource.com/platform/system/core/+/master/adb/OVERVIEW.TXT)
 - [dummies.com](https://www.dummies.com/web-design-development/mobile-apps/android-apps/android-emulators-or-whats-so-special-about-the-number-5554/)
 
-### ADB Commands:
+## ADB Commands:
+
+### Battery and Power
+
+
+__List options available with dumpsys__
+- _adb shell dumpsys | grep "DUMP OF SERVICE"_
 
 __Check the current status of the phone__
 - _adb shell dumpsys battery_
@@ -17,7 +23,6 @@ __Check the current status of the phone__
                 
         $ adb shell dumpsys battery
           USB powered: false
-
 
 __Change battery level__
 - _adb shell dumpsys battery set level <battery_percent_value>_
@@ -61,8 +66,9 @@ __For a rooted device:__
    - _adb shell dumpsys battery set ac 0_
    - _adb shell dumpsys battery set usb 0_
    - _adb shell dumpsys battery set wireless 0_
-  
 
+__Restore the phone to its state__
+- _adb shell dumpsys battery reset_
 
 
 
