@@ -7,10 +7,12 @@ How ADB Works:
 
 ### ADB Commands:
 
-__Change battery level from CLI__
+__Change battery level__
 - _adb shell dumpsys battery set level <battery_percent_value>_
   - eg, _adb shell dumpsys battery set level 20_
   
+__Test how the device behaves under low power conditions__
+- adb shell settings put global low_power 1
 
 __Mimic device is charging__
 - adb shell dumpsys battery ...
@@ -24,3 +26,4 @@ __Mimic device is charging__
 ----
 
 [dumpsys](https://developer.android.com/studio/command-line/dumpsys)
+[Test power-related issues](https://developer.android.com/topic/performance/power/test-power)
