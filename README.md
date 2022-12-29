@@ -87,4 +87,10 @@ __Restore the phone to its state__
 
 [Android Command-line tools](https://developer.android.com/studio/command-line)
 
+[Enter Doze Mode With Adb](https://jubin.tech/articles/2019/01/04/Enter-doze-mode-with-adb.html)
+
+[Optimize for Doze and App Standby](https://developer.android.com/training/monitoring-device-state/doze-standby)
+
 [Android Doze mode is enabled and restored using commands](https://blog.csdn.net/zyp009/article/details/78456906)
+
+[ADB Shell Commands List and Detailed Cheat Sheet](https://technastic.com/adb-shell-commands-list/)
