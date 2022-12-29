@@ -59,14 +59,38 @@ __Issue commands with (call) the activity manager (am) tool to perform various s
 - _adb shell am command_
   - eg, _adb shell am start -a android.intent.action.VIEW_
 
-
 __Issue commands with (call) the package manager (pm) tool to perform actions and queries on app packages installed on the device__
 - _adb shell pm command_
   - eg, _adb shell pm uninstall com.example.MyApp_
 
+__Issue commands with (call) the device policy manager (dpm) tool to control the active admin app or change a policy's status data on the device__
+- _adb shell dpm command_
+  - eg, _adb shell dpm force-network-logs_
 
+__Take a screenshot__
+- _adb shell screencap filename_
+  - eg, _adb shell screencap /sdcard/screen.png_
 
+__Record a video__
+- _adb shell screenrecord [options] filename_
+  - eg, _adb shell screenrecord /sdcard/demo.mp4_
 
+        $ adb shell
+        shell@ $ screenrecord --verbose /sdcard/demo.mp4
+        (press Control + C to stop)
+        shell@ $ exit
+        $ adb pull /sdcard/demo.mp4
+
+__Reset test devices between tests, eg, to remove user data and reset the test environment__
+- _adb shell cmd testharness enable_
+
+__sqlite CLI program for examining SQLite databases__
+- _adb shell sqlite3 db_location_
+
+        $ adb -s emulator-5554 shell
+        $ sqlite3 /data/data/com.example.app/databases/rssitems.db
+        SQLite version 3.3.12
+        Enter ".help" for instructions
 
 ### Battery and Power
 
