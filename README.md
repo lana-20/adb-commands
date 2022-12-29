@@ -7,8 +7,68 @@ How ADB Works:
 
 ## ADB Commands:
 
-### Battery and Power
+__Detailed list of all supported adb commands__
+- _adb --help_
 
+__Set the target device to listen for a TCP/IP connection on port 5555__
+- _adb tcpip 5555_
+
+__Connect to the device by its IP address__
+- _adb connect device_ip_address:5555_
+
+__Confirm that your host computer is connected to the target device__
+
+        $ adb devices
+        List of devices attached
+        device_ip_address:5555 device
+
+__Generate a list of attached devices using the devices command__
+- _adb devices -l_
+
+__Start adb server__
+- _adb start-server_
+
+__Reset the adb host / Stop the adb server__
+- _adb kill-server_
+
+__Install an APK on an emulator or connected device with the install command__
+- _adb install path_to_apk_
+
+__Copy a file or directory and its sub-directories from the device__
+- _adb pull remote local_
+
+__Copy a file or directory and its sub-directories to the device__
+- _adb push local remote_
+  - eg, _adb push myfile.txt /sdcard/myfile.txt_
+
+### ADB Shell Commands
+
+__Use the shell command to issue device commands through adb__
+- _adb [-d |-e | -s serial_number] shell shell_command_
+
+__Use the shell command to start an interactive shell through adb__
+- _adb [-d | -e | -s serial_number] shell_
+
+__Exit an interactive shell__
+- _exit_
+
+__List of available [Unix/Linux-like] CLI tools__
+- _adb shell ls /system/bin_
+
+__Issue commands with (call) the activity manager (am) tool to perform various system actions, such as start an activity, force-stop a process, broadcast an intent, modify the device screen properties, etc.__
+- _adb shell am command_
+  - eg, _adb shell am start -a android.intent.action.VIEW_
+
+
+__Issue commands with (call) the package manager (pm) tool to perform actions and queries on app packages installed on the device__
+- _adb shell pm command_
+  - eg, _adb shell pm uninstall com.example.MyApp_
+
+
+
+
+
+### Battery and Power
 
 __List options available with dumpsys__
 - _adb shell dumpsys | grep "DUMP OF SERVICE"_
