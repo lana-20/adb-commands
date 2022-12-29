@@ -5,7 +5,10 @@ How ADB Works:
 - [Google Git](https://android.googlesource.com/platform/system/core/+/master/adb/OVERVIEW.TXT)
 - [dummies.com](https://www.dummies.com/web-design-development/mobile-apps/android-apps/android-emulators-or-whats-so-special-about-the-number-5554/)
 
+
 ## ADB Commands:
+
+![image](https://user-images.githubusercontent.com/70295997/209899160-798e538d-02f4-4afb-af87-6e8fd24cdd79.png)
 
 __Detailed list of all supported adb commands__
 - _adb --help_
