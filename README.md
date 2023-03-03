@@ -10,7 +10,13 @@ Using ADB commands, I can reboot my device, push and pull files, create a backup
 - [Common Commands](https://github.com/lana-20/adb-commands/edit/main/README.md#common-commands)
 - [Install, Update, Ininstall an App](https://github.com/lana-20/adb-commands/blob/main/README.md#-install-update-uninstall-an-app)
 - [Command Redirection](https://github.com/lana-20/adb-commands/edit/main/README.md#-command-redirection)
-
+- [Shell Commands](https://github.com/lana-20/adb-commands/blob/main/README.md#-adb-shell-commands)
+- [Take a Screenshot](https://github.com/lana-20/adb-commands/edit/main/README.md#-take-a-screenshot)
+- [Record a Video](https://github.com/lana-20/adb-commands/edit/main/README.md#-record-a-video)
+- [Battery & Power](https://github.com/lana-20/adb-commands/edit/main/README.md#-battery-and-power) - *dumpsys*
+- [Memory Allocations](https://github.com/lana-20/adb-commands/edit/main/README.md#-memory-allocations) - *dumpsys*
+- [Change Runtime Permissions](https://github.com/lana-20/adb-commands/edit/main/README.md#-change-runtime-permissions)
+- [Find App Package Name](https://github.com/lana-20/adb-commands/edit/main/README.md#-find-app-package-name)
 
 ## Common Commands
 Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I use frequently as a mobile QA engineer:	
