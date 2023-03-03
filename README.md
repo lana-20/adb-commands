@@ -104,7 +104,7 @@ In the following section, I cover some of the commands I use as a mobile tester 
 
 ✰ [<code>adb devices | grep device | grep -v devices | cut -f 1 | xargs -I {} adb -s {} install ~/apks/my_app.apk</code>](https://stackoverflow.com/questions/8610733/how-can-i-adb-install-an-apk-to-multiple-connected-devices) - Installs an app (specified by the APK file) on **multiple** connected devices.
 	
-✰ [<code>adb install -r Downloads/<file_name>.apk</code>](https://github.com/lana-20/mobile-testing-interview-questions#if-you-have-an-old-version-installed-and-you-dont-want-to-lose-your-data-how-you-install-a-new-apk-file) - Reinstalls an (updated) app on the connected device. Add <code>-r</code> **before** the path to .apk.
+✰ [<code>adb install -r Downloads/<file_name>.apk</code>](https://github.com/lana-20/adb-app-reinstall) - Reinstalls an (updated) app on the connected device. Add <code>-r</code> **before** the path to .apk.
 	
 ✰ [<code>adb uninstall <package_name></code>](https://github.com/lana-20/mobile-testing-interview-questions#how-do-you-uninstall-an-application) - Uninstalls an app by its package name from the connected device.
 
