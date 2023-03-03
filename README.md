@@ -1,12 +1,6 @@
-# Android Debug Bridge (adb)
+# [Android Debug Bridge (adb)](https://github.com/lana-20/android-debug-bridge) Commands
 
 ADB commands can be used to debug Android devices, install or uninstall apps, and get information about a connected device.
-
-How ADB Works:
-- [Android Debug Bridge (ADB) Utility - Diagram|Components](https://github.com/lana-20/android-debug-bridge)
-- [Android Developer](https://developer.android.com/studio/command-line/adb)
-- [Google Git](https://android.googlesource.com/platform/system/core/+/master/adb/OVERVIEW.TXT)
-- [dummies.com](https://www.dummies.com/web-design-development/mobile-apps/android-apps/android-emulators-or-whats-so-special-about-the-number-5554/)
 
 ## ADB Commands:
 
