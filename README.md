@@ -6,57 +6,36 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
 
 Using ADB commands, I can reboot my device, push and pull files, create a backup and restore it, and sideload an updated zip package or an APK. ADB Shell commands, however, work on a much deeper level. They can be used to change the resolution of my device display, uninstall bloatware or system apps, enable and disable features, modify the system files, and change their configuration directly using commands from my computer.
 
-## ADB Commands:
-
-Here is a list of some common ADB (Android Debug Bridge) commands that are frequently used:	
+Here is a list of some common ADB (Android Debug Bridge) commands that I use frequently as a mobile QA engineer:	
 	
-* <code>adb devices</code> - Lists all the devices that are connected to my computer and are recognized by ADB.
-* <code>adb install <path/to/apk></code> - Installs an app (specified by the APK file) on the connected device.
+* <code>adb devices -l</code> - Lists all the devices that are connected to my computer and are recognized by ADB.
+	* For example, confirm that the host computer is connected to the target device:
+	
+        <code>$ adb devices
+        List of devices attached
+        device_ip_address:5555 device</code>
+	
+* <code>adb install <path/to/app.apk></code> - Installs an app (specified by the APK file) on the connected device.
 * <code>adb uninstall <package_name></code> - Uninstalls an app from the connected device.
-* <code>adb push <local_file> <remote_location></code>	- Copies a file from my computer to the connected device.
-* <code>adb pull <remote_file> <local_location></code> - Copies a file from the connected device to my computer.
+* <code>adb push <local_file> <remote_location></code>	- Copies a file, or directory and its sub-directories, from my computer to the connected device.
+	* For example:
+	
+        <code>adb push myfile.txt /sdcard/myfile.txt</code>
+	
+* <code>adb pull <remote_file> <local_location></code> - Copies a file, or a directory and its sub-directories, from the connected device to my computer.
 * <code>adb logcat</code> - Displays the logcat output for the connected device, which can be helpful for debugging.
 * <code>adb shell</code> - Opens a shell on the connected device, allowing me to run commands on the device directly.
 * <code>adb shell dumpsys <system_service></code> - Displays detailed information about a specific system service on the device.
 * <code>adb reboot</code> - Reboots the connected device.
+* <code>adb --help</code> - Yields a detailed list of all supported adb commands.
+* <code>adb tcpip 5555</code> - Sets the target device to listen for a TCP/IP connection on port 5555.
+* <code>adb connect device_ip_address:5555</code> - Connects to the device by its IP address.
+* <code>adb start-server</code> - Starts the adb server.
+* <code>adb kill-server</code> - Resets the adb host / Stops the adb server. In some cases, I need to terminate the adb server process and then restart it to resolve a problem (e.g., if adb does not respond to a command). After stopping, I can then restart the server by issuing any adb command.
 
-These are just a few examples of the many ADB commands that are available. In the following section, I cover some of the commands I use as a mobile tester most frequently.	
+These are just a few examples of the many ADB commands that are available. In the following section, I cover some of the commands I use as a mobile tester most frequently.
 
-__Detailed list of all supported adb commands__
-- _adb --help_
-
-__Set the target device to listen for a TCP/IP connection on port 5555__
-- _adb tcpip 5555_
-
-__Connect to the device by its IP address__
-- _adb connect device_ip_address:5555_
-
-__Confirm that your host computer is connected to the target device__
-
-        $ adb devices
-        List of devices attached
-        device_ip_address:5555 device
-
-__Generate a list of attached devices using the devices command__
-- _adb devices -l_
-
-__Start adb server__
-- _adb start-server_
-
-__Reset the adb host / Stop the adb server__
-- _adb kill-server_
-
-__Install an APK on an emulator or connected device with the install command__
-- _adb install path_to_apk_
-
-__Copy a file or directory and its sub-directories from the device__
-- _adb pull remote local_
-
-__Copy a file or directory and its sub-directories to the device__
-- _adb push local remote_
-  - eg, _adb push myfile.txt /sdcard/myfile.txt_
-
-### <img src="https://user-images.githubusercontent.com/70295997/222664101-9da4621a-2457-4f28-b3a4-291a1eef9505.png" width=40> ADB Shell Commands
+## <img src="https://user-images.githubusercontent.com/70295997/222664101-9da4621a-2457-4f28-b3a4-291a1eef9505.png" width=40> ADB Shell Commands
 
 __Use the shell command to start an interactive shell through adb__
 - _adb [-d | -e | -s serial_number] shell_
@@ -115,7 +94,7 @@ __sqlite CLI program for examining SQLite databases__
         SQLite version 3.3.12
         Enter ".help" for instructions
 
-### <img src="https://user-images.githubusercontent.com/70295997/222664496-9662aacc-8f0a-492d-b2f6-6821f597527b.png" width=40> [Battery and Power](https://developer.android.com/studio/command-line/dumpsys#battery)
+## <img src="https://user-images.githubusercontent.com/70295997/222664496-9662aacc-8f0a-492d-b2f6-6821f597527b.png" width=40> [Battery and Power](https://developer.android.com/studio/command-line/dumpsys#battery)
 <code>dumpsys</code> is a tool which runs on Android devices and provides information about system services. Sometimes it's helpful for retrieving info about the device memory or battery usage.
 
 __List options available with dumpsys__
@@ -178,7 +157,7 @@ __For a rooted device:__
 __Restore the phone to its state__
 - _adb shell dumpsys battery reset_
 
-### <img src="https://user-images.githubusercontent.com/70295997/222664856-1274022a-decf-42cf-bc43-c837c883ecf5.png" width=40> [Memory Allocations](https://developer.android.com/studio/command-line/dumpsys#ViewingAllocations)
+## <img src="https://user-images.githubusercontent.com/70295997/222664856-1274022a-decf-42cf-bc43-c837c883ecf5.png" width=40> [Memory Allocations](https://developer.android.com/studio/command-line/dumpsys#ViewingAllocations)
 
 Inspect an app's memory usage in one of two ways: 
 1. Over a period of time using <code>procstats</code>.
