@@ -188,7 +188,11 @@ Inspect an app's memory usage in one of two ways:
    
    The <code>-d</code> flag prints more info related to Dalvik and ART memory usage. The output lists all of your app's current allocations, measured in KBs.
 
-The output lists all of your app's current allocations, measured in kilobytes.
+The output lists all of the app's current allocations, measured in kilobytes.
+	
+## <img src="https://user-images.githubusercontent.com/70295997/222684527-c0f7569d-2c87-408c-a2e1-795af0695a83.png" width=40> Find App Package Name
+Review the ADB and AAPT approaches [here](https://github.com/lana-20/android-package-name).
+	
 ----
 
 [dumpsys](https://developer.android.com/studio/command-line/dumpsys)
