@@ -2,6 +2,10 @@
 
 ADB commands can be used to debug Android devices, install or uninstall apps, and get information about a connected device.
 
+ADB Shell commands provide access to a Unix Shell that runs a command directly on an Android device. As soon as I execute an <code>adb shell</code> command on the command terminal, it sends a signal to my Android device and triggers the remote shell command console. Thus ADB shell commands let me control my Android device.
+
+Using ADB commands, I can reboot my device, push and pull files, create a backup and restore it, and sideload an updated zip package or an APK. ADB Shell commands, however, work on a much deeper level. They can be used to change the resolution of my device display, uninstall bloatware or system apps, enable and disable features, modify the system files, and change their configuration directly using commands from my computer.
+
 ## ADB Commands:
 
 Here is a list of some common ADB (Android Debug Bridge) commands that are frequently used:	
@@ -79,8 +83,13 @@ __Issue commands with (call) the device policy manager (dpm) tool to control the
   - eg, _adb shell dpm force-network-logs_
 
 <img src="https://user-images.githubusercontent.com/70295997/222665055-a70b67a5-bd18-4359-b08a-18523b7e7d2c.png" width=40> __Take a screenshot__
-- _adb shell screencap filename_
-  - eg, _adb shell screencap /sdcard/screen.png_
+- <code>adb shell screencap filename</code>
+  - For example:
+	- <code>adb shell screencap /sdcard/screenshot.png</code>
+		- saves the screenshot to the device's SD card - must always state the .png format explicitly
+	- <code>adb shell screencap -p > ~/Desktop/screenshot.png</code>
+		- <code>-p</code> forces <code>screencap</code> to use PNG format
+	
 
 <img src="https://user-images.githubusercontent.com/70295997/222665494-0f62d00d-cf8e-4e8a-904c-a2ec8a0d12d5.png" width=40> __Record a video__
 - _adb shell screenrecord [options] filename_
