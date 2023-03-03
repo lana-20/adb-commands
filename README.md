@@ -100,7 +100,7 @@ In the following section, I cover some of the commands I use as a mobile tester 
 	
 ## <img src="https://user-images.githubusercontent.com/70295997/222727852-07d04327-0a1d-4ae8-ac79-1a6ba8aebebd.png" width=40> Install, Update, Uninstall an App	
 
-✰ [<code>adb install ~/apks/my_app.apk</code>](https://github.com/lana-20/mobile-testing-interview-questions#if-you-have-several-android-devices-virtual-emulators-andor-physical-phones-connected-to-your-machine-how-do-you-install-an-application) - Installs an app (specified by the APK file path) on a **single** connected device.
+✰ [<code>adb install ~/apks/my_app.apk</code>](https://github.com/lana-20/adb-command-redirection) - Installs an app (specified by the APK file path) on a **single** connected device.
 
 ✰ [<code>adb devices | grep device | grep -v devices | cut -f 1 | xargs -I {} adb -s {} install ~/apks/my_app.apk</code>](https://stackoverflow.com/questions/8610733/how-can-i-adb-install-an-apk-to-multiple-connected-devices) - Installs an app (specified by the APK file) on **multiple** connected devices.
 	
