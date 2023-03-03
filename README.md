@@ -16,14 +16,6 @@ Here is a list of some common ADB (Android Debug Bridge) commands that I use fre
         List of devices attached
         device_ip_address:5555 device
 	
-✰ [<code>adb install ~/apks/my_app.apk</code>](https://github.com/lana-20/mobile-testing-interview-questions#if-you-have-several-android-devices-virtual-emulators-andor-physical-phones-connected-to-your-machine-how-do-you-install-an-application) - Installs an app (specified by the APK file path) on a **single** connected device.
-
-✰ [<code>adb devices | grep device | grep -v devices | cut -f 1 | xargs -I {} adb -s {} install ~/apks/my_app.apk</code>](https://stackoverflow.com/questions/8610733/how-can-i-adb-install-an-apk-to-multiple-connected-devices) - Installs an app (specified by the APK file) on **multiple** connected devices.
-	
-✰ [<code>adb install -r Downloads/<file_name>.apk</code>](https://github.com/lana-20/mobile-testing-interview-questions#if-you-have-an-old-version-installed-and-you-dont-want-to-lose-your-data-how-you-install-a-new-apk-file) - Reinstalls an (updated) app on the connected device. Add <code>-r</code> **before** the path to .apk.
-	
-✰ [<code>adb uninstall <package_name></code>](https://github.com/lana-20/mobile-testing-interview-questions#how-do-you-uninstall-an-application) - Uninstalls an app by its package name from the connected device.
-
 ✰ [<code>adb push <local_file> <remote_destination></code>](https://github.com/lana-20/mobile-testing-interview-questions#:~:text=adb%20push%20%3Clocal_file%3E%20%3Cremote_destination%3E) - Copies a file, or directory and its sub-directories, from my computer to the connected device.
 	
 - For example:
@@ -53,6 +45,17 @@ Here is a list of some common ADB (Android Debug Bridge) commands that I use fre
 ✰ <code>adb --help</code> - Yields a detailed list of all supported adb commands.
 
 These are just a few examples of the many ADB commands that are available. In the following section, I cover some of the commands I use as a mobile tester most frequently.
+	
+## Install, Update, Uninstall an App	
+
+✰ [<code>adb install ~/apks/my_app.apk</code>](https://github.com/lana-20/mobile-testing-interview-questions#if-you-have-several-android-devices-virtual-emulators-andor-physical-phones-connected-to-your-machine-how-do-you-install-an-application) - Installs an app (specified by the APK file path) on a **single** connected device.
+
+✰ [<code>adb devices | grep device | grep -v devices | cut -f 1 | xargs -I {} adb -s {} install ~/apks/my_app.apk</code>](https://stackoverflow.com/questions/8610733/how-can-i-adb-install-an-apk-to-multiple-connected-devices) - Installs an app (specified by the APK file) on **multiple** connected devices.
+	
+✰ [<code>adb install -r Downloads/<file_name>.apk</code>](https://github.com/lana-20/mobile-testing-interview-questions#if-you-have-an-old-version-installed-and-you-dont-want-to-lose-your-data-how-you-install-a-new-apk-file) - Reinstalls an (updated) app on the connected device. Add <code>-r</code> **before** the path to .apk.
+	
+✰ [<code>adb uninstall <package_name></code>](https://github.com/lana-20/mobile-testing-interview-questions#how-do-you-uninstall-an-application) - Uninstalls an app by its package name from the connected device.
+
 
 ## <img src="https://user-images.githubusercontent.com/70295997/222664101-9da4621a-2457-4f28-b3a4-291a1eef9505.png" width=40> ADB Shell Commands
 ADB Shell commands provide access to a Unix Shell that runs a command directly on my Android device. As soon as I execute an <code>adb shell</code> command on the command terminal, it sends a signal to my Android device and triggers the remote shell command console. Thus ADB shell commands let me control my Android device.
