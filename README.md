@@ -8,7 +8,7 @@ Using ADB commands, I can reboot my device, push and pull files, create a backup
 
 Here is a list of some common ADB (Android Debug Bridge) commands that I use frequently as a mobile QA engineer:	
 	
-✰ <code>adb devices -l</code> - Lists all the devices that are connected to my computer and are recognized by ADB.
+✰ <code>adb devices -l</code> - Lists all the devices that are connected to my computer and are recognized by ADB. To make sure the device I'm planning to manipulate is actually connected, I always start with the command <code>adb devices</code> and then issue my next adb command.
 
 - For example, confirm that the host computer is connected to the target device:
 	
@@ -16,9 +16,13 @@ Here is a list of some common ADB (Android Debug Bridge) commands that I use fre
         List of devices attached
         device_ip_address:5555 device
 	
-✰ <code>adb install <path/to/app.apk></code> - Installs an app (specified by the APK file) on the connected device.
+✰ <code>adb install ~/apks/my_app.apk</code> - Installs an app (specified by the APK file path) on a **single** connected device.
 
-✰ <code>adb uninstall <package_name></code> - Uninstalls an app from the connected device.
+✰ <code>adb devices | grep device | grep -v devices | cut -f 1 | xargs -I {} adb -s {} install</code> - Installs an app (specified by the APK file) on **all** connected devices.
+	
+✰ <code>adb install -r Downloads/<file_name>.apk</code> - Reinstalls an (updated) app on the connected device. Add <code>-r</code> **before** the path to .apk.
+	
+✰ <code>adb uninstall <package_name></code> - Uninstalls an app by its package name from the connected device.
 
 ✰ <code>adb push <local_file> <remote_location></code>	- Copies a file, or directory and its sub-directories, from my computer to the connected device.
 	
@@ -37,6 +41,8 @@ Here is a list of some common ADB (Android Debug Bridge) commands that I use fre
 ✰ <code>adb reboot</code> - Reboots the connected device.
 	
 ✰ <code>adb --help</code> - Yields a detailed list of all supported adb commands.
+	
+✰ <code>adb -d shell ip addr show wlan0</code> - Finds the device's IP address. Alternatively, I can search in the phone settings.
 	
 ✰ <code>adb tcpip 5555</code> - Sets the target device to listen for a TCP/IP connection on port 5555.
 	
