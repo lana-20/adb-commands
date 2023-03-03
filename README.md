@@ -43,7 +43,7 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
             Pixel_6_API_33_-_Galaxy_S23_Skin
             Pixel_6_Pro_API_33
 
-✰ [<code>adb push <local_file> <remote_destination></code>](https://github.com/lana-20/mobile-testing-interview-questions#:~:text=adb%20push%20%3Clocal_file%3E%20%3Cremote_destination%3E) - Copies a file, or directory and its sub-directories, from my computer to the connected device.
+✰ <code>adb push <local_file> <remote_destination></code> - Copies a file, or directory and its sub-directories, from my computer to the connected device.
 	
 - For example:
 	
@@ -54,8 +54,26 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 ✰ <code>adb logcat</code> - Displays the logcat output for the connected device, which can be helpful for debugging.
 
 ✰ <code>adb shell</code> - Opens a shell on the connected device, allowing me to run commands on the device directly.
+  - [ ] When I conduct interruption testing, I use the <code>adb shell</code> util to turn the mobile and WiFi service networks on and off. For example:
+      
+            adb shell svc data enable
+            adb shell svc data disable
+            adb shell svc wifi enable
+            adb shell svc wifi disable
+ 
+      In the context of interrupt testing, I can also mimick a call on an emulator:
+            
+            adb shell am start -a android.intent.action.CALL
+ 
 	
 ✰ <code>adb shell dumpsys <system_service></code> - Displays detailed information about a specific system service on the device.
+  - [ ] I often use the <code>dumpsys</code> util to to obtain the minSDK version info about the package when selecting/configuring devices for proper test coverage. For example, minSDK 25 stands for Android version 7.1:
+      
+           % adb shell dumpsys package com.myapp.app | grep version
+           versionCode=72 minSDK=25 targetSDK=31 versionName=2.0.72
+ 
+	On Windows, replace <code>grep</code> with either <code>find</code> or <code>findstr</code>.
+	
 	
 ✰ <code>adb -d shell ip addr show wlan0</code> - Finds the device's IP address. Alternatively, I can search in the phone settings.
 	
@@ -68,10 +86,17 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 ✰ <code>adb kill-server</code> - Resets the adb host / Stops the adb server. In some cases, I need to terminate the adb server process and then restart it to resolve a problem (e.g., if adb does not respond to a command). After stopping, I can then restart the server by issuing any adb command.
 
 ✰ <code>adb reboot</code> - Reboots the connected device.
+	
+✰ [<code>adb forward tcp:9222 localabstract:chrome_devtools_remote</code>](https://github.com/lana-20/adb-forward-tcp) - Calls out to the Android Debug Bridge and forwards the Chrome dev tools port on the device to the local port 9222
+	
+✰ [<code>adb shell setprop debug.layout true</code>](https://github.com/lana-20/adb-debug-layout)- Turns on the debug mode.
+
 
 ✰ <code>adb --help</code> - Yields a detailed list of all supported adb commands.
 
-These are just a few examples of the many ADB commands that are available. In the following section, I cover some of the commands I use as a mobile tester most frequently.
+These are just a few examples of the many ADB commands that are available. [Android documentation](https://developer.android.com/studio/command-line/adb) has a complete list of ADB commands.
+	
+In the following section, I cover some of the commands I use as a mobile tester most frequently.
 	
 ## <img src="https://user-images.githubusercontent.com/70295997/222727852-07d04327-0a1d-4ae8-ac79-1a6ba8aebebd.png" width=40> Install, Update, Uninstall an App	
 
