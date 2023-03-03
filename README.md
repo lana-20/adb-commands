@@ -1,6 +1,6 @@
 # <img src="https://user-images.githubusercontent.com/70295997/222662992-d2888f51-e3ac-4a90-94f1-aecbcd4fa0d3.png" width=40> [Android Debug Bridge (adb)](https://github.com/lana-20/android-debug-bridge) Commands
 
-ADB commands can be used to debug Android devices, install or uninstall apps, and get information about a connected device.
+ADB commands can be used to debug Android devices, install or uninstall apps, and get information about a connected device. The <code>adb</code> util can practically replicate any action a user performs on the UI.
 
 ADB Shell commands provide access to a Unix Shell that runs a command directly on an Android device. As soon as I execute an <code>adb shell</code> command on the command terminal, it sends a signal to my Android device and triggers the remote shell command console. Thus ADB shell commands let me control my Android device.
 
@@ -55,7 +55,8 @@ Here is a list of some common ADB (Android Debug Bridge) commands that I use fre
 These are just a few examples of the many ADB commands that are available. In the following section, I cover some of the commands I use as a mobile tester most frequently.
 
 ## <img src="https://user-images.githubusercontent.com/70295997/222664101-9da4621a-2457-4f28-b3a4-291a1eef9505.png" width=40> ADB Shell Commands
-
+ADB Shell commands provide access to a Unix Shell that runs a command directly on my Android device. As soon as I execute an <code>adb shell</code> command on the command terminal, it sends a signal to my Android device and triggers the remote shell command console. Thus ADB shell commands let me control my Android device.
+	
 ✰ <code>adb [-d | -e | -s serial_number] shell</code> - Uses the shell command to start an interactive shell through adb.
 	
 ✰ <code>adb [-d |-e | -s serial_number] shell <shell_command></code> - Uses the shell command to issue device commands through adb.
