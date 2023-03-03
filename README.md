@@ -46,7 +46,7 @@ Here is a list of some common ADB (Android Debug Bridge) commands that I use fre
 
 These are just a few examples of the many ADB commands that are available. In the following section, I cover some of the commands I use as a mobile tester most frequently.
 	
-## Install, Update, Uninstall an App	
+## <img src="https://user-images.githubusercontent.com/70295997/222727852-07d04327-0a1d-4ae8-ac79-1a6ba8aebebd.png" width=40> Install, Update, Uninstall an App	
 
 ✰ [<code>adb install ~/apks/my_app.apk</code>](https://github.com/lana-20/mobile-testing-interview-questions#if-you-have-several-android-devices-virtual-emulators-andor-physical-phones-connected-to-your-machine-how-do-you-install-an-application) - Installs an app (specified by the APK file path) on a **single** connected device.
 
@@ -56,7 +56,19 @@ These are just a few examples of the many ADB commands that are available. In th
 	
 ✰ [<code>adb uninstall <package_name></code>](https://github.com/lana-20/mobile-testing-interview-questions#how-do-you-uninstall-an-application) - Uninstalls an app by its package name from the connected device.
 
-
+## <img src="https://user-images.githubusercontent.com/70295997/222729738-d7fccced-5c0a-49c2-96c0-6cf03cdfb6c9.png" width=40> Command Redirection
+✰ <code>adb -d <command></code> - Sends a command to the **only** connected physical device (CONNECTED via USB).
+	
+✰ <code>adb -e <command></code> - Sends a command to the **only** connected emulator (CONNECTED via TCP/IP).
+	
+Once a physical device is connected via TCP/IP, use the <code>-e</code> or <code>-s <serial_number></code> redirection option, since <code>-d</code> sends a command to devices connected via USB.
+	
+✰ <code>adb -s <serial_number> <command></code> - Use if more than one device or more than one emulator are connected.
+	
+- For example:
+	
+        adb -s emulator-5554 install my_app.apk
+	
 ## <img src="https://user-images.githubusercontent.com/70295997/222664101-9da4621a-2457-4f28-b3a4-291a1eef9505.png" width=40> ADB Shell Commands
 ADB Shell commands provide access to a Unix Shell that runs a command directly on my Android device. As soon as I execute an <code>adb shell</code> command on the command terminal, it sends a signal to my Android device and triggers the remote shell command console. Thus ADB shell commands let me control my Android device.
 	
