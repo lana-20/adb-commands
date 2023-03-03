@@ -95,7 +95,7 @@ These are just a few examples of the many ADB commands that are available. In th
 	
 ✰ <code>exit</code> - Exits an interactive shell.
 	
-<img src="https://user-images.githubusercontent.com/70295997/222665055-a70b67a5-bd18-4359-b08a-18523b7e7d2c.png" width=40> __Take a screenshot__
+## <img src="https://user-images.githubusercontent.com/70295997/222665055-a70b67a5-bd18-4359-b08a-18523b7e7d2c.png" width=40> Take a screenshot
 ✰ <code>adb shell screencap file_name.png</code>
   - For example:
 	- <code>adb shell screencap /sdcard/screenshot.png</code>
@@ -106,7 +106,7 @@ These are just a few examples of the many ADB commands that are available. In th
 
 	📝 Alternatively, I can take a screenshot using (1) emulator settings and (2) in Android Studio (under Logcat) with buttons.
 
-<img src="https://user-images.githubusercontent.com/70295997/222665494-0f62d00d-cf8e-4e8a-904c-a2ec8a0d12d5.png" width=40> __Record a video__
+## <img src="https://user-images.githubusercontent.com/70295997/222665494-0f62d00d-cf8e-4e8a-904c-a2ec8a0d12d5.png" width=40> Record a video
 ✰ <code>adb shell screenrecord [options] file_name.mp4</code>
  - For example:
 	- <code>adb shell screenrecord /sdcard/ErrorMsgRegistrationScreen.mp4</code>
