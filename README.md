@@ -1,15 +1,28 @@
 # Android Debug Bridge (adb)
 
+ADB commands can be used to debug Android devices, install or uninstall apps, and get information about a connected device.
+
 How ADB Works:
 - [Android Debug Bridge (ADB) Utility - Diagram|Components](https://github.com/lana-20/android-debug-bridge)
 - [Android Developer](https://developer.android.com/studio/command-line/adb)
 - [Google Git](https://android.googlesource.com/platform/system/core/+/master/adb/OVERVIEW.TXT)
 - [dummies.com](https://www.dummies.com/web-design-development/mobile-apps/android-apps/android-emulators-or-whats-so-special-about-the-number-5554/)
 
-
 ## ADB Commands:
 
-![image](https://user-images.githubusercontent.com/70295997/209899160-798e538d-02f4-4afb-af87-6e8fd24cdd79.png)
+Here is a list of some common ADB (Android Debug Bridge) commands that are frequently used:	
+	
+* adb devices	- Lists all the devices that are connected to my computer and are recognized by ADB.
+* adb install <path/to/apk>	- Installs an app (specified by the APK file) on the connected device.
+* adb uninstall <package_name>	- Uninstalls an app from the connected device.
+* adb push <local_file> <remote_location>	- Copies a file from my computer to the connected device.
+* adb pull <remote_file> <local_location>	- Copies a file from the connected device to my computer.
+* adb logcat	- Displays the logcat output for the connected device, which can be helpful for debugging.
+* adb shell	- Opens a shell on the connected device, allowing me to run commands on the device directly.
+* adb shell dumpsys <system_service>	- Displays detailed information about a specific system service on the device.
+* adb reboot	- Reboots the connected device.
+	
+These are just a few examples of the many ADB commands that are available. In the following section, I cover some of the commands I use as a mobile tester most frequently.	
 
 __Detailed list of all supported adb commands__
 - _adb --help_
