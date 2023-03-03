@@ -56,62 +56,81 @@ These are just a few examples of the many ADB commands that are available. In th
 
 ## <img src="https://user-images.githubusercontent.com/70295997/222664101-9da4621a-2457-4f28-b3a4-291a1eef9505.png" width=40> ADB Shell Commands
 
-__Use the shell command to start an interactive shell through adb__
-- _adb [-d | -e | -s serial_number] shell_
+✰ <code>adb [-d | -e | -s serial_number] shell</code> - Uses the shell command to start an interactive shell through adb.
+	
+✰ <code>adb [-d |-e | -s serial_number] shell <shell_command></code> - Uses the shell command to issue device commands through adb.
+	
+✰ <code>adb shell ls /system/bin</code> - Lists available [Unix/Linux-like] CLI tools.
+	
+✰ <code>adb shell am</code> - Issues commands with (calls) the Activity Manager <code>am</code> tool to perform various system actions, such as start an activity, force-stop a process, broadcast an intent, modify the device screen properties, etc.
+	
+- For example:
+	
+        adb shell am start -a android.intent.action.VIEW
 
-__Use the shell command to issue device commands through adb__
-- _adb [-d |-e | -s serial_number] shell <shell_command>_
 
-__Exit an interactive shell__
-- _exit_
+✰ <code>adb shell pm</code> - Issues commands with (calls) the Package Manager <code>pm</code> tool to perform actions and queries on app packages installed on the device.
+	
+- For example:
+	
+        adb shell pm uninstall com.example.MyApp
 
-__List of available [Unix/Linux-like] CLI tools__
-- _adb shell ls /system/bin_
+✰ <code>adb shell dpm</code> - Issues commands with (calls) the Device Policy Manager <code>dpm</code> tool to control the active admin app or change a policy's status data on the device.
+	
+- For example:
+	
+        adb shell dpm force-network-logs
 
-__Issue commands with (call) the activity manager (am) tool to perform various system actions, such as start an activity, force-stop a process, broadcast an intent, modify the device screen properties, etc.__
-- _adb shell am command_
-  - eg, _adb shell am start -a android.intent.action.VIEW_
-
-__Issue commands with (call) the package manager (pm) tool to perform actions and queries on app packages installed on the device__
-- _adb shell pm command_
-  - eg, _adb shell pm uninstall com.example.MyApp_
-
-__Issue commands with (call) the device policy manager (dpm) tool to control the active admin app or change a policy's status data on the device__
-- _adb shell dpm command_
-  - eg, _adb shell dpm force-network-logs_
-
+✰ <code>adb shell cmd testharness enable</code> - Resets test devices between tests, e.g., to remove user data and reset the test environment.
+	
+✰ <code>adb shell sqlite3 db_location</code> - sqlite CLI program for examining SQLite databases.
+	
+- For example:
+	
+        $ adb -s emulator-5554 shell
+        $ sqlite3 /data/data/com.example.app/databases/rssitems.db
+        SQLite version 3.3.12
+        Enter ".help" for instructions
+	
+	
+✰ <code>exit</code> - Exits an interactive shell.
+	
 <img src="https://user-images.githubusercontent.com/70295997/222665055-a70b67a5-bd18-4359-b08a-18523b7e7d2c.png" width=40> __Take a screenshot__
-- <code>adb shell screencap filename</code>
+✰ <code>adb shell screencap file_name.png</code>
   - For example:
 	- <code>adb shell screencap /sdcard/screenshot.png</code>
 		- saves the screenshot to the device's SD card - must always state the .png format explicitly
 	- <code>adb shell screencap -p > ~/Desktop/screenshot.png</code>
 		- <code>-p</code> forces <code>screencap</code> to use PNG format
 
-📝 Alternatively, I can take a screenshot using (1) emulator settings and (2) in Android Studio (under Logcat) with buttons.
+
+	📝 Alternatively, I can take a screenshot using (1) emulator settings and (2) in Android Studio (under Logcat) with buttons.
 
 <img src="https://user-images.githubusercontent.com/70295997/222665494-0f62d00d-cf8e-4e8a-904c-a2ec8a0d12d5.png" width=40> __Record a video__
-- _adb shell screenrecord [options] filename_
-  - eg, _adb shell screenrecord /sdcard/demo.mp4_
+✰ <code>adb shell screenrecord [options] file_name.mp4</code>
+ - For example:
+	- <code>adb shell screenrecord /sdcard/ErrorMsgRegistrationScreen.mp4</code>
 
-        $ adb shell
-        shell@ $ screenrecord --verbose /sdcard/demo.mp4
-        (press Control + C to stop)
-        shell@ $ exit
-        $ adb pull /sdcard/demo.mp4
+			$ adb shell
+			shell@ $ screenrecord --verbose /sdcard/demo.mp4
+			(press Control + C to stop)
+			shell@ $ exit
+			$ adb pull /sdcard/demo.mp4
 
-📝 Alternatively, I can [record a video in Android Studio](https://developer.android.com/studio/debug/am-video.html?hl=en).
+	✘ Give the file a meaningful name, e.g., use a bug number as a file name.
+	
+	✍ Limitations:
+	
+	1. 🔇 The recording has no audio sound.	
+	2. ⏳ The recording time limit is 180 seconds (3 minutes). I may, however, change that by adding the <code>--time-limit</code> argument. I can use the <code>--time</code> shortcut in lieu of the <code>--time-limit</code>.
+	
+			adb shell screenrecord --time-limit <TIME> /sdcard/ErrorMsgRegistrationScreen.mp4
+ 		- For example, produce a 2-minute video:
+	
+				adb shell screenrecord --time 120 /sdcard/ErrorMsgRegistrationScreen.mp4
 
-__Reset test devices between tests, eg, to remove user data and reset the test environment__
-- _adb shell cmd testharness enable_
+	📝 Alternatively, I can [record a video in Android Studio](https://developer.android.com/studio/debug/am-video.html?hl=en).
 
-__sqlite CLI program for examining SQLite databases__
-- _adb shell sqlite3 db_location_
-
-        $ adb -s emulator-5554 shell
-        $ sqlite3 /data/data/com.example.app/databases/rssitems.db
-        SQLite version 3.3.12
-        Enter ".help" for instructions
 
 ## <img src="https://user-images.githubusercontent.com/70295997/222664496-9662aacc-8f0a-492d-b2f6-6821f597527b.png" width=40> [Battery and Power](https://developer.android.com/studio/command-line/dumpsys#battery)
 <code>dumpsys</code> is a tool which runs on Android devices and provides information about system services. Sometimes it's helpful for retrieving info about the device memory or battery usage.
