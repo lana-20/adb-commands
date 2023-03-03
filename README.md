@@ -1,4 +1,4 @@
-# [Android Debug Bridge (adb)](https://github.com/lana-20/android-debug-bridge) Commands
+# <img src="https://user-images.githubusercontent.com/70295997/222662992-d2888f51-e3ac-4a90-94f1-aecbcd4fa0d3.png" width=40> [Android Debug Bridge (adb)](https://github.com/lana-20/android-debug-bridge) Commands
 
 ADB commands can be used to debug Android devices, install or uninstall apps, and get information about a connected device.
 
@@ -6,16 +6,16 @@ ADB commands can be used to debug Android devices, install or uninstall apps, an
 
 Here is a list of some common ADB (Android Debug Bridge) commands that are frequently used:	
 	
-* adb devices	- Lists all the devices that are connected to my computer and are recognized by ADB.
-* adb install <path/to/apk>	- Installs an app (specified by the APK file) on the connected device.
-* adb uninstall <package_name>	- Uninstalls an app from the connected device.
-* adb push <local_file> <remote_location>	- Copies a file from my computer to the connected device.
-* adb pull <remote_file> <local_location>	- Copies a file from the connected device to my computer.
-* adb logcat	- Displays the logcat output for the connected device, which can be helpful for debugging.
-* adb shell	- Opens a shell on the connected device, allowing me to run commands on the device directly.
-* adb shell dumpsys <system_service>	- Displays detailed information about a specific system service on the device.
-* adb reboot	- Reboots the connected device.
-	
+* <code>adb devices</code> - Lists all the devices that are connected to my computer and are recognized by ADB.
+* <code>adb install <path/to/apk></code> - Installs an app (specified by the APK file) on the connected device.
+* <code>adb uninstall <package_name></code> - Uninstalls an app from the connected device.
+* <code>adb push <local_file> <remote_location></code>	- Copies a file from my computer to the connected device.
+* <code>adb pull <remote_file> <local_location></code> - Copies a file from the connected device to my computer.
+* <code>adb logcat</code> - Displays the logcat output for the connected device, which can be helpful for debugging.
+* <code>adb shell</code> - Opens a shell on the connected device, allowing me to run commands on the device directly.
+* <code>adb shell dumpsys <system_service></code> - Displays detailed information about a specific system service on the device.
+* <code>adb reboot</code> - Reboots the connected device.
+
 These are just a few examples of the many ADB commands that are available. In the following section, I cover some of the commands I use as a mobile tester most frequently.	
 
 __Detailed list of all supported adb commands__
@@ -52,8 +52,7 @@ __Copy a file or directory and its sub-directories to the device__
 - _adb push local remote_
   - eg, _adb push myfile.txt /sdcard/myfile.txt_
 
-### ADB Shell Commands
-
+### <img src="https://user-images.githubusercontent.com/70295997/222664101-9da4621a-2457-4f28-b3a4-291a1eef9505.png" width=40> ADB Shell Commands
 
 __Use the shell command to start an interactive shell through adb__
 - _adb [-d | -e | -s serial_number] shell_
@@ -79,11 +78,11 @@ __Issue commands with (call) the device policy manager (dpm) tool to control the
 - _adb shell dpm command_
   - eg, _adb shell dpm force-network-logs_
 
-__Take a screenshot__
+<img src="https://user-images.githubusercontent.com/70295997/222665055-a70b67a5-bd18-4359-b08a-18523b7e7d2c.png" width=40> __Take a screenshot__
 - _adb shell screencap filename_
   - eg, _adb shell screencap /sdcard/screen.png_
 
-__Record a video__
+<img src="https://user-images.githubusercontent.com/70295997/222665494-0f62d00d-cf8e-4e8a-904c-a2ec8a0d12d5.png" width=40> __Record a video__
 - _adb shell screenrecord [options] filename_
   - eg, _adb shell screenrecord /sdcard/demo.mp4_
 
@@ -104,7 +103,7 @@ __sqlite CLI program for examining SQLite databases__
         SQLite version 3.3.12
         Enter ".help" for instructions
 
-### [Battery and Power](https://developer.android.com/studio/command-line/dumpsys#battery)
+### <img src="https://user-images.githubusercontent.com/70295997/222664496-9662aacc-8f0a-492d-b2f6-6821f597527b.png" width=40> [Battery and Power](https://developer.android.com/studio/command-line/dumpsys#battery)
 <code>dumpsys</code> is a tool which runs on Android devices and provides information about system services. Sometimes it's helpful for retrieving info about the device memory or battery usage.
 
 __List options available with dumpsys__
@@ -167,7 +166,7 @@ __For a rooted device:__
 __Restore the phone to its state__
 - _adb shell dumpsys battery reset_
 
-### [Memory Allocations](https://developer.android.com/studio/command-line/dumpsys#ViewingAllocations)
+### <img src="https://user-images.githubusercontent.com/70295997/222664856-1274022a-decf-42cf-bc43-c837c883ecf5.png" width=40> [Memory Allocations](https://developer.android.com/studio/command-line/dumpsys#ViewingAllocations)
 
 Inspect an app's memory usage in one of two ways: 
 1. Over a period of time using <code>procstats</code>.
