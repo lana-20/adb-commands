@@ -198,7 +198,7 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
 
 	<img width=30 src="https://user-images.githubusercontent.com/70295997/222704599-be2a4adb-ddf1-4934-be42-f789effbc134.png"> Alternatively, I can take a screenshot using (1) emulator settings and (2) in Android Studio (under Logcat) with buttons.
 
-## <img src="https://user-images.githubusercontent.com/70295997/222665494-0f62d00d-cf8e-4e8a-904c-a2ec8a0d12d5.png" width=40> Record a video
+## <img src="https://user-images.githubusercontent.com/70295997/222665494-0f62d00d-cf8e-4e8a-904c-a2ec8a0d12d5.png" width=40> [Record a Video](https://github.com/lana-20/adb-shell-screenrecord)
 ✰ <code>adb shell screenrecord [options] file_name.mp4</code>
  - For example:
 	- <code>adb shell screenrecord /sdcard/ErrorMsgRegistrationScreen.mp4</code>
