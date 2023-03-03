@@ -89,7 +89,8 @@ __Issue commands with (call) the device policy manager (dpm) tool to control the
 		- saves the screenshot to the device's SD card - must always state the .png format explicitly
 	- <code>adb shell screencap -p > ~/Desktop/screenshot.png</code>
 		- <code>-p</code> forces <code>screencap</code> to use PNG format
-	
+
+📝 Alternatively, I can take a screenshot using (1) emulator settings and (2) in Android Studio (under Logcat) with buttons.
 
 <img src="https://user-images.githubusercontent.com/70295997/222665494-0f62d00d-cf8e-4e8a-904c-a2ec8a0d12d5.png" width=40> __Record a video__
 - _adb shell screenrecord [options] filename_
@@ -100,6 +101,8 @@ __Issue commands with (call) the device policy manager (dpm) tool to control the
         (press Control + C to stop)
         shell@ $ exit
         $ adb pull /sdcard/demo.mp4
+
+📝 Alternatively, I can [record a video in Android Studio](https://developer.android.com/studio/debug/am-video.html?hl=en).
 
 __Reset test devices between tests, eg, to remove user data and reset the test environment__
 - _adb shell cmd testharness enable_
