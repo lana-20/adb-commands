@@ -103,7 +103,7 @@ These are just a few examples of the many ADB commands that are available. In th
 	- <code>adb shell screencap -p > ~/Desktop/screenshot.png</code>
 		- <code>-p</code> forces <code>screencap</code> to use PNG format
 
-	📝 Alternatively, I can take a screenshot using (1) emulator settings and (2) in Android Studio (under Logcat) with buttons.
+	<img width=30 src="https://user-images.githubusercontent.com/70295997/222704599-be2a4adb-ddf1-4934-be42-f789effbc134.png"> Alternatively, I can take a screenshot using (1) emulator settings and (2) in Android Studio (under Logcat) with buttons.
 
 ## <img src="https://user-images.githubusercontent.com/70295997/222665494-0f62d00d-cf8e-4e8a-904c-a2ec8a0d12d5.png" width=40> Record a video
 ✰ <code>adb shell screenrecord [options] file_name.mp4</code>
@@ -130,7 +130,7 @@ These are just a few examples of the many ADB commands that are available. In th
 	
 				adb shell screenrecord --time 120 /sdcard/ErrorMsgRegistrationScreen.mp4
 
-	Since the video is saved to the <code>sdcard</code>, I need to <code>pull</code> it from the device to my current working directory:
+	<img width=30 src="https://user-images.githubusercontent.com/70295997/222704143-3af9a5c0-81af-43bf-9078-2f983621db17.png"> Since the video is saved to the SD card, I need to <code>pull</code> it from the device to my current working directory:
 			
 		adb pull /sdcard/ErrorMsgRegistrationScreen.mp4
 	
@@ -140,11 +140,11 @@ These are just a few examples of the many ADB commands that are available. In th
 	
 	If no destination directory is specified, the file is stored at my current working directory. To check the current directory location, use command <code>pwd</code> on Mac or <code>cd</code> on Windows.
 
-	To remove a file from the device, run the following command:
+	❌ To remove a file from the device, run the <code>rm</code> command:
 			
 		adb shell rm /sdcard/ErrorMsgRegistrationScreen.mp4
 	
-	📝 Alternatively, I can [record a video in Android Studio](https://developer.android.com/studio/debug/am-video.html?hl=en).
+	<img width=30 src="https://user-images.githubusercontent.com/70295997/222704599-be2a4adb-ddf1-4934-be42-f789effbc134.png"> Alternatively, I can [record a video in Android Studio](https://developer.android.com/studio/debug/am-video.html?hl=en).
 
 
 ## <img src="https://user-images.githubusercontent.com/70295997/222664496-9662aacc-8f0a-492d-b2f6-6821f597527b.png" width=40> [Battery and Power](https://developer.android.com/studio/command-line/dumpsys#battery)
