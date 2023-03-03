@@ -157,8 +157,10 @@ __For a rooted device:__
 __Restore the phone to its state__
 - _adb shell dumpsys battery reset_
 
-
-
+### [Memory Allocations](https://developer.android.com/studio/command-line/dumpsys#ViewingAllocations)
+Inspect an app's memory usage in one of two ways: 
+1. Over a period of time using <code>procstats</code>.
+2. At a particular point in time using <code>meminfo</code>.
 
 ----
 
