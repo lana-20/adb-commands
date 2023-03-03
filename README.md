@@ -188,7 +188,7 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
 	
 ✰ <code>exit</code> - Exits an interactive shell.
 	
-## <img src="https://user-images.githubusercontent.com/70295997/222665055-a70b67a5-bd18-4359-b08a-18523b7e7d2c.png" width=40> Take a screenshot
+## <img src="https://user-images.githubusercontent.com/70295997/222665055-a70b67a5-bd18-4359-b08a-18523b7e7d2c.png" width=40> [Take a screenshot](https://github.com/lana-20/adb-shell-screencap)
 ✰ <code>adb shell screencap file_name.png</code>
   - For example:
 	- <code>adb shell screencap /sdcard/screenshot.png</code>
