@@ -8,30 +8,43 @@ Using ADB commands, I can reboot my device, push and pull files, create a backup
 
 Here is a list of some common ADB (Android Debug Bridge) commands that I use frequently as a mobile QA engineer:	
 	
-* <code>adb devices -l</code> - Lists all the devices that are connected to my computer and are recognized by ADB.
-	* For example, confirm that the host computer is connected to the target device:
+✰ <code>adb devices -l</code> - Lists all the devices that are connected to my computer and are recognized by ADB.
+
+- For example, confirm that the host computer is connected to the target device:
 	
-        <code>$ adb devices
+        $ adb devices
         List of devices attached
-        device_ip_address:5555 device</code>
+        device_ip_address:5555 device
 	
-* <code>adb install <path/to/app.apk></code> - Installs an app (specified by the APK file) on the connected device.
-* <code>adb uninstall <package_name></code> - Uninstalls an app from the connected device.
-* <code>adb push <local_file> <remote_location></code>	- Copies a file, or directory and its sub-directories, from my computer to the connected device.
-	* For example:
+✰ <code>adb install <path/to/app.apk></code> - Installs an app (specified by the APK file) on the connected device.
+
+✰ <code>adb uninstall <package_name></code> - Uninstalls an app from the connected device.
+
+✰ <code>adb push <local_file> <remote_location></code>	- Copies a file, or directory and its sub-directories, from my computer to the connected device.
 	
-        <code>adb push myfile.txt /sdcard/myfile.txt</code>
+- For example:
 	
-* <code>adb pull <remote_file> <local_location></code> - Copies a file, or a directory and its sub-directories, from the connected device to my computer.
-* <code>adb logcat</code> - Displays the logcat output for the connected device, which can be helpful for debugging.
-* <code>adb shell</code> - Opens a shell on the connected device, allowing me to run commands on the device directly.
-* <code>adb shell dumpsys <system_service></code> - Displays detailed information about a specific system service on the device.
-* <code>adb reboot</code> - Reboots the connected device.
-* <code>adb --help</code> - Yields a detailed list of all supported adb commands.
-* <code>adb tcpip 5555</code> - Sets the target device to listen for a TCP/IP connection on port 5555.
-* <code>adb connect device_ip_address:5555</code> - Connects to the device by its IP address.
-* <code>adb start-server</code> - Starts the adb server.
-* <code>adb kill-server</code> - Resets the adb host / Stops the adb server. In some cases, I need to terminate the adb server process and then restart it to resolve a problem (e.g., if adb does not respond to a command). After stopping, I can then restart the server by issuing any adb command.
+        adb push myfile.txt /sdcard/myfile.txt
+	
+✰ <code>adb pull <remote_file> <local_location></code> - Copies a file, or a directory and its sub-directories, from the connected device to my computer.
+
+✰ <code>adb logcat</code> - Displays the logcat output for the connected device, which can be helpful for debugging.
+
+✰ <code>adb shell</code> - Opens a shell on the connected device, allowing me to run commands on the device directly.
+	
+✰ <code>adb shell dumpsys <system_service></code> - Displays detailed information about a specific system service on the device.
+	
+✰ <code>adb reboot</code> - Reboots the connected device.
+	
+✰ <code>adb --help</code> - Yields a detailed list of all supported adb commands.
+	
+✰ <code>adb tcpip 5555</code> - Sets the target device to listen for a TCP/IP connection on port 5555.
+	
+✰ <code>adb connect device_ip_address:5555</code> - Connects to the device by its IP address.
+	
+✰ <code>adb start-server</code> - Starts the adb server.
+	
+✰ <code>adb kill-server</code> - Resets the adb host / Stops the adb server. In some cases, I need to terminate the adb server process and then restart it to resolve a problem (e.g., if adb does not respond to a command). After stopping, I can then restart the server by issuing any adb command.
 
 These are just a few examples of the many ADB commands that are available. In the following section, I cover some of the commands I use as a mobile tester most frequently.
 
