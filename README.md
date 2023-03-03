@@ -112,6 +112,12 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
         SQLite version 3.3.12
         Enter ".help" for instructions
 	
+✰ <code>adb shell monkey -p <package_name> -v 500</code> - Performs 500 random interactions on the given app. [Monkey](https://developer.android.com/studio/test/monkey) is a program that runs on your emulator or device and generates pseudo-random streams of user events such as clicks, touches, or gestures, as well as a number of system-level events. The tool is useful for stress/interruption testing.
+
+	
+- For example, send 1000 random clicks and touches to the app:
+	
+        adb shell monkey -p com.appiumpro.the_app -v 1000
 	
 ✰ <code>exit</code> - Exits an interactive shell.
 	
