@@ -7,28 +7,41 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
 Using ADB commands, I can reboot my device, push and pull files, create a backup and restore it, and sideload an updated zip package or an APK. ADB Shell commands, however, work on a much deeper level. They can be used to change the resolution of my device display, uninstall bloatware or system apps, enable and disable features, modify the system files, and change their configuration directly using commands from my computer.
 
 ## <img src="https://user-images.githubusercontent.com/70295997/222811964-0914d2fb-6716-431c-8c37-f35f369a9ed4.png" width=40> TOC
-- [Common Commands](https://github.com/lana-20/adb-commands/edit/main/README.md#common-commands)
-- [Install, Update, Ininstall an App](https://github.com/lana-20/adb-commands/blob/main/README.md#-install-update-uninstall-an-app)
-- [Command Redirection](https://github.com/lana-20/adb-commands/edit/main/README.md#-command-redirection)
-- [Shell Commands](https://github.com/lana-20/adb-commands/blob/main/README.md#-adb-shell-commands)
-- [Take a Screenshot](https://github.com/lana-20/adb-commands/edit/main/README.md#-take-a-screenshot)
-- [Record a Video](https://github.com/lana-20/adb-commands/edit/main/README.md#-record-a-video)
-- [Battery & Power](https://github.com/lana-20/adb-commands/edit/main/README.md#-battery-and-power) - *dumpsys*
-- [Memory Allocations](https://github.com/lana-20/adb-commands/edit/main/README.md#-memory-allocations) - *dumpsys*
-- [Change Runtime Permissions](https://github.com/lana-20/adb-commands/edit/main/README.md#-change-runtime-permissions)
-- [Find App Package Name](https://github.com/lana-20/adb-commands/edit/main/README.md#-find-app-package-name)
+- [ ] [Common Commands](https://github.com/lana-20/adb-commands/edit/main/README.md#common-commands)
+- [ ] [Install, Update, Ininstall an App](https://github.com/lana-20/adb-commands/blob/main/README.md#-install-update-uninstall-an-app)
+- [ ] [Command Redirection](https://github.com/lana-20/adb-commands/edit/main/README.md#-command-redirection)
+- [ ] [Shell Commands](https://github.com/lana-20/adb-commands/blob/main/README.md#-adb-shell-commands)
+- [ ] [Take a Screenshot](https://github.com/lana-20/adb-commands/edit/main/README.md#-take-a-screenshot)
+- [ ] [Record a Video](https://github.com/lana-20/adb-commands/edit/main/README.md#-record-a-video)
+- [ ] [Battery & Power](https://github.com/lana-20/adb-commands/edit/main/README.md#-battery-and-power) - *dumpsys*
+- [ ] [Memory Allocations](https://github.com/lana-20/adb-commands/edit/main/README.md#-memory-allocations) - *dumpsys*
+- [ ] [Change Runtime Permissions](https://github.com/lana-20/adb-commands/edit/main/README.md#-change-runtime-permissions)
+- [ ] [Find App Package Name](https://github.com/lana-20/adb-commands/edit/main/README.md#-find-app-package-name)
 
 ## Common Commands
 Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I use frequently as a mobile QA engineer:	
 	
 ✰ <code>adb devices -l</code> - Lists all the devices that are connected to my computer and are recognized by ADB. To make sure the device I'm planning to manipulate is actually connected, I always start with the command <code>adb devices</code> and then issue my next adb command.
 
-- For example, confirm that the host computer is connected to the target device:
+- For example, confirm that the target devices are connected to the host computer and are recognized by ADB:
 	
         $ adb devices
         List of devices attached
-        device_ip_address:5555 device
-	
+        <udid> device
+
+		$ adb devices
+		List of devices attached
+		A6PVD6LNFQ578HUS  device
+		emulator-5554 device
+		emulator-5556 device
+
+  - [ ] 📝 The <code>emulator -list-avds</code> command also lists devices, but only the virtual ones, and not necessarily the ones which are awake and running.
+
+            % emulator -list-avds
+            Nexus_6_API_30
+            Pixel_6_API_33_-_Galaxy_S23_Skin
+            Pixel_6_Pro_API_33
+
 ✰ [<code>adb push <local_file> <remote_destination></code>](https://github.com/lana-20/mobile-testing-interview-questions#:~:text=adb%20push%20%3Clocal_file%3E%20%3Cremote_destination%3E) - Copies a file, or directory and its sub-directories, from my computer to the connected device.
 	
 - For example:
