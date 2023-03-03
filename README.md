@@ -13,6 +13,7 @@ Using ADB commands, I can reboot my device, push and pull files, create a backup
 - [ ] [Shell Commands](https://github.com/lana-20/adb-commands/blob/main/README.md#-adb-shell-commands)
 - [ ] [Take a Screenshot](https://github.com/lana-20/adb-commands/edit/main/README.md#-take-a-screenshot)
 - [ ] [Record a Video](https://github.com/lana-20/adb-commands/edit/main/README.md#-record-a-video)
+- [ ] [Push & Pull Files to/from Device](https://github.com/lana-20/adb-commands/edit/main/README.md#push--pull-files-tofrom-device)
 - [ ] [Battery & Power](https://github.com/lana-20/adb-commands/edit/main/README.md#-battery-and-power) - *dumpsys*
 - [ ] [Memory Allocations](https://github.com/lana-20/adb-commands/edit/main/README.md#-memory-allocations) - *dumpsys*
 - [ ] [Change Runtime Permissions](https://github.com/lana-20/adb-commands/edit/main/README.md#-change-runtime-permissions)
@@ -213,7 +214,25 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
 	
 	<img width=30 src="https://user-images.githubusercontent.com/70295997/222704599-be2a4adb-ddf1-4934-be42-f789effbc134.png"> Alternatively, I can [record a video in Android Studio](https://developer.android.com/studio/debug/am-video.html?hl=en).
 
+## <img src="https://user-images.githubusercontent.com/70295997/222822492-d3ce49a7-d5a0-400c-a0cd-b661dd0d87fd.png" width=40> Push & Pull Files to/from Device
+      
+- [ ] <code>adb push <local_file> <remote_destination></code>: copy a file from your computer to the connected device     
+  - [ ] When testing an upload feature on an app like YouTube or Instagram, I might need to push some files to my device’s <code>/sdcard</code> directory. I can copy a file (image, video, etc.) from the host machine to the mobile device with the following command:
 
+            adb push Desktop/image.png /sdcard/Pictures
+
+      I don’t use <code>shell</code> in the <code>push</code> command, because I push from my computer. <code>adb push</code> is not a util that lives on my mobile device. It’s just a command to exchange files between the the host machine and the connected device. <code>push</code> and <code>pull</code> work in tandem. <code>pull</code> helps me get files from the device, while <code>push</code> helps me push files onto the device.
+      
+      📝 If the destination directory name does not exist on the device, the command will create a new directory with that name.
+- [ ] <code>adb pull <remote_file> <local_destination></code>: copy a file from the connected device to your computer
+      
+  - [ ] I often use the command to get a copy of my device screen recording on my computer. I also utilize the command to get a copy of an app on my computer by its package name. For example:
+      
+           adb pull /sdcard/<video_name>.mp4 ~/Documents
+           adb pull /data/app/~~TwHdRTDoNtvL1DRfi8jrCS==/com.myapp.app-3MsubaTFWY_02Tgq-TNEAN==/base.apk
+         	
+
+	
 ## <img src="https://user-images.githubusercontent.com/70295997/222664496-9662aacc-8f0a-492d-b2f6-6821f597527b.png" width=40> [Battery and Power](https://developer.android.com/studio/command-line/dumpsys#battery)
 <code>dumpsys</code> is a tool which runs on Android devices and provides information about system services. Sometimes it's helpful for retrieving info about the device memory or battery usage.
 
