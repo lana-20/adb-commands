@@ -108,7 +108,7 @@ In the following section, I cover some of the commands I use as a mobile tester 
 	
 ✰ [<code>adb uninstall <package_name></code>](https://github.com/lana-20/mobile-testing-interview-questions#how-do-you-uninstall-an-application) - Uninstalls an app by its package name from the connected device.
 
-## <img src="https://user-images.githubusercontent.com/70295997/222729738-d7fccced-5c0a-49c2-96c0-6cf03cdfb6c9.png" width=40> Command Redirection
+## <img src="https://user-images.githubusercontent.com/70295997/222729738-d7fccced-5c0a-49c2-96c0-6cf03cdfb6c9.png" width=40> [Command Redirection](https://github.com/lana-20/adb-command-redirection)
 ✰ <code>adb -d <command></code> - Sends a command to the **only** connected physical device (CONNECTED via USB).
 	
 ✰ <code>adb -e <command></code> - Sends a command to the **only** connected emulator (CONNECTED via TCP/IP).
