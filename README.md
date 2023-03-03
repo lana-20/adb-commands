@@ -61,7 +61,7 @@ These are just a few examples of the many ADB commands that are available. In th
 	
 ✰ <code>adb -e <command></code> - Sends a command to the **only** connected emulator (CONNECTED via TCP/IP).
 	
-Once a physical device is connected via TCP/IP, use the <code>-e</code> or <code>-s <serial_number></code> redirection option, since <code>-d</code> sends a command to devices connected via USB.
+Once a [physical device is connected via TCP/IP](https://github.com/lana-20/android-device-connect-wifi), use the <code>-e</code> or <code>-s <serial_number></code> redirection option, since <code>-d</code> sends a command to devices connected via USB.
 	
 ✰ <code>adb -s <serial_number> <command></code> - Use if more than one device or more than one emulator are connected.
 	
