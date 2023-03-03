@@ -6,7 +6,14 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
 
 Using ADB commands, I can reboot my device, push and pull files, create a backup and restore it, and sideload an updated zip package or an APK. ADB Shell commands, however, work on a much deeper level. They can be used to change the resolution of my device display, uninstall bloatware or system apps, enable and disable features, modify the system files, and change their configuration directly using commands from my computer.
 
-Here is a list of some common ADB (Android Debug Bridge) commands that I use frequently as a mobile QA engineer:	
+## <img src="https://user-images.githubusercontent.com/70295997/222811964-0914d2fb-6716-431c-8c37-f35f369a9ed4.png" width=40> TOC
+- [Common Commands](https://github.com/lana-20/adb-commands/edit/main/README.md#common-commands)
+- [Install, Update, Ininstall an App](https://github.com/lana-20/adb-commands/blob/main/README.md#-install-update-uninstall-an-app)
+- [Command Redirection](https://github.com/lana-20/adb-commands/edit/main/README.md#-command-redirection)
+
+
+## Common Commands
+Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I use frequently as a mobile QA engineer:	
 	
 ✰ <code>adb devices -l</code> - Lists all the devices that are connected to my computer and are recognized by ADB. To make sure the device I'm planning to manipulate is actually connected, I always start with the command <code>adb devices</code> and then issue my next adb command.
 
