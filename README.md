@@ -1,6 +1,7 @@
 # Android Debug Bridge (adb)
 
 How ADB Works:
+- [Android Debug Bridge (ADB) Utility - Diagram|Components](https://github.com/lana-20/android-debug-bridge)
 - [Android Developer](https://developer.android.com/studio/command-line/adb)
 - [Google Git](https://android.googlesource.com/platform/system/core/+/master/adb/OVERVIEW.TXT)
 - [dummies.com](https://www.dummies.com/web-design-development/mobile-apps/android-apps/android-emulators-or-whats-so-special-about-the-number-5554/)
@@ -46,11 +47,12 @@ __Copy a file or directory and its sub-directories to the device__
 
 ### ADB Shell Commands
 
-__Use the shell command to issue device commands through adb__
-- _adb [-d |-e | -s serial_number] shell shell_command_
 
 __Use the shell command to start an interactive shell through adb__
 - _adb [-d | -e | -s serial_number] shell_
+
+__Use the shell command to issue device commands through adb__
+- _adb [-d |-e | -s serial_number] shell <shell_command>_
 
 __Exit an interactive shell__
 - _exit_
@@ -95,7 +97,8 @@ __sqlite CLI program for examining SQLite databases__
         SQLite version 3.3.12
         Enter ".help" for instructions
 
-### Battery and Power
+### [Battery and Power](https://developer.android.com/studio/command-line/dumpsys#battery)
+<code>dumpsys</code> is a tool which runs on Android devices and provides information about system services. Sometimes it's helpful for retrieving info about the device memory or battery usage.
 
 __List options available with dumpsys__
 - _adb shell dumpsys | grep "DUMP OF SERVICE"_
@@ -158,10 +161,18 @@ __Restore the phone to its state__
 - _adb shell dumpsys battery reset_
 
 ### [Memory Allocations](https://developer.android.com/studio/command-line/dumpsys#ViewingAllocations)
+
 Inspect an app's memory usage in one of two ways: 
 1. Over a period of time using <code>procstats</code>.
+- Get application memory usage stats over the last three hours, in human-readable format
+   - _adb shell dumpsys procstats --hours 3_
 2. At a particular point in time using <code>meminfo</code>.
+- Record a snapshot of how the app's memory is divided between different types of RAM allocation
+   - _adb shell dumpsys meminfo package_name|pid [-d]_
+   
+   The <code>-d</code> flag prints more info related to Dalvik and ART memory usage. The output lists all of your app's current allocations, measured in KBs.
 
+The output lists all of your app's current allocations, measured in kilobytes.
 ----
 
 [dumpsys](https://developer.android.com/studio/command-line/dumpsys)
