@@ -63,18 +63,37 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
 	
 ✰ <code>adb shell ls /system/bin</code> - Lists available [Unix/Linux-like] CLI tools.
 	
+✰ <code>adb shell getprop</code> - Returns the list of the device's properties; can be useful when I need to get, e.g., a device model or an Android version.	
+	
+✰ <code>adb shell getprop ro.build.version.release</code> - Returns the Android version installed on the device, e.g., Android 13.0.
+	
+✰ <code>adb shell getprop ro.build.version.sdk</code> - Returns the API level, e.g., 33.
+	
 ✰ <code>adb shell am</code> - Issues commands with (calls) the Activity Manager <code>am</code> tool to perform various system actions, such as start an activity, force-stop a process, broadcast an intent, modify the device screen properties, etc.
 	
 - For example:
 	
         adb shell am start -a android.intent.action.VIEW
+	
+- Or, force-close the app:
+	
+		adb shell am force-stop com.my_app.standalone.test2
 
+- Or, start the app - need to know the app's 1st activity created on launch:
+	
+		adb shell am start <package_name>/<activity_name>
+		adb shell am start com.my_app.standalone.test2/com.my_app.standalone.features.auth.AuthActivity
 
 ✰ <code>adb shell pm</code> - Issues commands with (calls) the Package Manager <code>pm</code> tool to perform actions and queries on app packages installed on the device.
 	
 - For example:
 	
         adb shell pm uninstall com.example.MyApp
+	
+- Or, clear all package data from the device - after running this command, the app behaves as if it was just installed:
+	
+		adb shell pm clear com.my_app.standalone.test2
+
 
 ✰ <code>adb shell dpm</code> - Issues commands with (calls) the Device Policy Manager <code>dpm</code> tool to control the active admin app or change a policy's status data on the device.
 	
