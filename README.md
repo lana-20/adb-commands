@@ -51,7 +51,7 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 	
 ✰ <code>adb pull <remote_file> <local_location></code> - Copies a file, or a directory and its sub-directories, from the connected device to my computer.
 
-✰ <code>adb logcat</code> - Displays the logcat output for the connected device, which can be helpful for debugging.
+✰ [<code>adb logcat</code>](https://github.com/lana-20/adb-logcat-options-filters) - Displays the logcat output for the connected device, which can be helpful for debugging.
 
 ✰ <code>adb shell</code> - Opens a shell on the connected device, allowing me to run commands on the device directly.
   - [ ] When I conduct interruption testing, I use the <code>adb shell</code> util to turn the mobile and WiFi service networks on and off. For example:
@@ -135,7 +135,9 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
 ✰ <code>adb shell getprop ro.build.version.release</code> - Returns the Android version installed on the device, e.g., Android 13.0.
 	
 ✰ <code>adb shell getprop ro.build.version.sdk</code> - Returns the API level, e.g., 33.
-	
+
+✰ <code>adb shell getprop sys.boot_completed</code> - There is an interesting property that I can access through <code>shell</code>, which is <code>boot_completed</code>. When setting up a CI pipeline involving Android emulators, I come across this command. This is a flag that I can periodically query for, and wait until its state changes to True. Therefore I can be sure that my system is fully booted and proceed with installing apps on it, and perform automated tests.
+
 ✰ <code>adb shell am</code> - Issues commands with (calls) the Activity Manager <code>am</code> tool to perform various system actions, such as start an activity, force-stop a process, broadcast an intent, modify the device screen properties, etc.
 	
 - For example:
