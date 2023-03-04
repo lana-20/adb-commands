@@ -87,11 +87,20 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 
 ✰ <code>adb reboot</code> - Reboots the connected device.
 	
+- For example:
+	
+		adb reboot bootloader
+		adb reboot recovery
+		adb reboot sideload (Nexus)
+	
 ✰ [<code>adb forward tcp:9222 localabstract:chrome_devtools_remote</code>](https://github.com/lana-20/adb-forward-tcp) - Calls out to the Android Debug Bridge and forwards the Chrome dev tools port on the device to the local port 9222
 	
 ✰ [<code>adb shell setprop debug.layout true</code>](https://github.com/lana-20/adb-debug-layout)- Turns on the debug mode.
 
-
+✰ <code>adb root</code> / <code>adb shell + su</code>
+	
+✰ <code>adb remount</code> / <code>adb shell remount -o rw,remount,rw /system</code>
+	
 ✰ <code>adb --help</code> - Yields a detailed list of all supported adb commands.
 
 These are just a few examples of the many ADB commands that are available. [Android documentation](https://developer.android.com/studio/command-line/adb) has a complete list of ADB commands.
