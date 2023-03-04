@@ -250,7 +250,7 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
 	
 	<img width=30 src="https://user-images.githubusercontent.com/70295997/222704599-be2a4adb-ddf1-4934-be42-f789effbc134.png"> Alternatively, I can [record a video in Android Studio](https://developer.android.com/studio/debug/am-video.html?hl=en).
 
-## <img src="https://user-images.githubusercontent.com/70295997/222822492-d3ce49a7-d5a0-400c-a0cd-b661dd0d87fd.png" width=40> Push & Pull Files to/from Device
+## <img src="https://user-images.githubusercontent.com/70295997/222822492-d3ce49a7-d5a0-400c-a0cd-b661dd0d87fd.png" width=40> [Push & Pull Files to/from Device](https://github.com/lana-20/device-file-interaction)
       
 - [ ] <code>adb push <local_file> <remote_destination></code>: copy a file from your computer to the connected device     
   - [ ] When testing an upload feature on an app like YouTube or Instagram, I might need to push some files to my device’s <code>/sdcard</code> directory. I can copy a file (image, video, etc.) from the host machine to the mobile device with the following command:
