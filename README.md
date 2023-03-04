@@ -13,7 +13,7 @@ Using ADB commands, I can reboot my device, push and pull files, create a backup
 - [ ] [Shell Commands](https://github.com/lana-20/adb-commands/blob/main/README.md#-adb-shell-commands)
 - [ ] [Take a Screenshot](https://github.com/lana-20/adb-commands/blob/main/README.md#-take-a-screenshot)
 - [ ] [Record a Video](https://github.com/lana-20/adb-commands/blob/main/README.md#-record-a-video)
-- [ ] [Push & Pull Files to/from Device](https://github.com/lana-20/adb-commands/blob/main/README.md#push--pull-files-tofrom-device)
+- [ ] [Push & Pull Files to/from Device](https://github.com/lana-20/adb-commands/blob/main/README.md#-push--pull-files-tofrom-device)
 - [ ] [Battery & Power](https://github.com/lana-20/adb-commands/blob/main/README.md#-battery-and-power) - *dumpsys*
 - [ ] [Memory Allocations](https://github.com/lana-20/adb-commands/blob/main/README.md#-memory-allocations) - *dumpsys*
 - [ ] [Change Runtime Permissions](https://github.com/lana-20/adb-commands/blob/main/README.md#-change-runtime-permissions)
