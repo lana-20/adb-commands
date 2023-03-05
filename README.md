@@ -65,7 +65,7 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
            % adb shell dumpsys package com.myapp.app | grep version
            versionCode=72 minSDK=25 targetSDK=31 versionName=2.0.72
  
-	On Windows, replace [<code>grep</code>](https://github.com/lana-20/grep) with either <code>find</code> or <code>findstr</code>.
+	On Windows, replace [<code>grep</code>](https://github.com/lana-20/grep) with either <code>find</code> or <code>findstr</code>, or download [Cygwin](https://www.cygwin.com/) and use it to run Unix/Linux commands.
 	
 	
 ✰ <code>adb -d shell ip addr show wlan0</code> - Finds the device's IP address. Alternatively, I can search in the phone settings.
