@@ -180,6 +180,9 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
         Enter ".help" for instructions
 	
 ✰ <code>adb shell monkey -p <package_name> -v 500</code> - Performs 500 random interactions on the given app. [Monkey](https://developer.android.com/studio/test/monkey) is a program that runs on your emulator or device and generates pseudo-random streams of user events such as clicks, touches, or gestures, as well as a number of system-level events. The tool is useful for [stress/interruption](https://github.com/lana-20/interruption-interference-testing) testing.
+- For example, send 1000 random clicks and touches to the app:
+	
+        adb shell monkey -p com.appiumpro.the_app -v 1000
 
   - [ ] When I conduct interruption testing, I use the <code>adb shell</code> util to turn the mobile and WiFi service networks on and off. For example:
       
@@ -193,10 +196,6 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
             adb shell am start -a android.intent.action.CALL
  
 	
-- For example, send 1000 random clicks and touches to the app:
-	
-        adb shell monkey -p com.appiumpro.the_app -v 1000
-
 ✰ <code>adb shell settings put secure enabled_accessibility_services</code> - Uses TalkBack with ADB for [accessibility](https://github.com/lana-20/accessibility-testing) testing.
 
 ✰ <code>exit</code> - Exits an interactive shell.
@@ -268,8 +267,6 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
       
            adb pull /sdcard/<video_name>.mp4 ~/Documents
            adb pull /data/app/~~TwHdRTDoNtvL1DRfi8jrCS==/com.myapp.app-3MsubaTFWY_02Tgq-TNEAN==/base.apk
-         	
-
 	
 ## <img src="https://user-images.githubusercontent.com/70295997/222664496-9662aacc-8f0a-492d-b2f6-6821f597527b.png" width=40> [Battery and Power](https://developer.android.com/studio/command-line/dumpsys#battery)
 <code>dumpsys</code> is a tool which runs on Android devices and provides information about system services. Sometimes it's helpful for retrieving info about the device memory or battery usage.
