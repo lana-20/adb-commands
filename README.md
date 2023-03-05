@@ -59,7 +59,7 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 	
 	<img width="400" alt="Screenshot 2023-03-04 at 6 54 25 PM" src="https://user-images.githubusercontent.com/70295997/222940211-6dd50fbd-0761-4100-afa4-ca6a884ef6f5.png">
 	
-✰ <code>adb shell dumpsys <system_service></code> - Displays detailed information about a specific system service on the device.
+✰ <code>adb shell [dumpsys](https://github.com/lana-20/dumpsys) <system_service></code> - Displays detailed information about a specific system service on the device.
   - [ ] I often use the <code>dumpsys</code> util to to obtain the minSDK version info about the package when selecting/configuring devices for proper test coverage. For example, minSDK 25 stands for Android version 7.1:
       
            % adb shell dumpsys package com.myapp.app | grep version
