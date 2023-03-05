@@ -84,7 +84,7 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 	
 ✰ <code>adb -d shell ip addr show wlan0</code> - Finds the device's IP address. Alternatively, I can search in the phone settings.
 	
-✰ <code>adb tcpip 5555</code> - Sets the target device to listen for a TCP/IP connection on port 5555, when connecting to a device over Wi-Fi .
+✰ <code>adb tcpip 5555</code> - Sets the target device to listen for a TCP/IP connection on port 5555, when [connecting to a device over Wi-Fi](https://developer.android.com/studio/command-line/adb#wireless).
 	
 ✰ <code>adb connect device_ip_address:5555</code> - Connects to the device by its IP address.
 	
@@ -104,10 +104,6 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 	
 ✰ [<code>adb shell setprop debug.layout true</code>](https://github.com/lana-20/adb-debug-layout)- Turns on the debug mode.
 
-✰ <code>adb root</code> / <code>adb shell + su</code>
-	
-✰ <code>adb remount</code> / <code>adb shell remount -o rw,remount,rw /system</code>
-	
 ✰ <code>adb --help</code> - Yields a detailed list of all supported adb commands.
 
 These are just a few examples of the many ADB commands that are available. [Android documentation](https://developer.android.com/studio/command-line/adb) has a complete list of ADB commands.
