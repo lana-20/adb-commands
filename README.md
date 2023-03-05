@@ -74,7 +74,7 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 	
 ✰ <code>adb connect device_ip_address:5555</code> - Connects to the device by its IP address.
 	
-✰ <code>adb start-server</code> - Starts the adb server.
+✰ <code>adb start-server</code> - Starts the [adb server](https://github.com/lana-20/android-debug-bridge#:~:text=A-,server,-%2C%20which%20manages%20communication).
 	
 ✰ <code>adb kill-server</code> - Resets the adb host / Stops the adb server. In some cases, I need to terminate the adb server process and then restart it to resolve a problem (e.g., if adb does not respond to a command). After stopping, I can then restart the server by issuing any adb command.
 
