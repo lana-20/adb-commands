@@ -59,20 +59,6 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 	
 	<img width="400" alt="Screenshot 2023-03-04 at 6 54 25 PM" src="https://user-images.githubusercontent.com/70295997/222940211-6dd50fbd-0761-4100-afa4-ca6a884ef6f5.png">
 	
-
-
-  - [ ] When I conduct interruption testing, I use the <code>adb shell</code> util to turn the mobile and WiFi service networks on and off. For example:
-      
-            adb shell svc data enable
-            adb shell svc data disable
-            adb shell svc wifi enable
-            adb shell svc wifi disable
- 
-      In the context of interrupt testing, I can also mimick a call on an emulator:
-            
-            adb shell am start -a android.intent.action.CALL
- 
-	
 ✰ <code>adb shell dumpsys <system_service></code> - Displays detailed information about a specific system service on the device.
   - [ ] I often use the <code>dumpsys</code> util to to obtain the minSDK version info about the package when selecting/configuring devices for proper test coverage. For example, minSDK 25 stands for Android version 7.1:
       
@@ -195,6 +181,17 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
 	
 ✰ <code>adb shell monkey -p <package_name> -v 500</code> - Performs 500 random interactions on the given app. [Monkey](https://developer.android.com/studio/test/monkey) is a program that runs on your emulator or device and generates pseudo-random streams of user events such as clicks, touches, or gestures, as well as a number of system-level events. The tool is useful for [stress/interruption](https://github.com/lana-20/interruption-interference-testing) testing.
 
+  - [ ] When I conduct interruption testing, I use the <code>adb shell</code> util to turn the mobile and WiFi service networks on and off. For example:
+      
+            adb shell svc data enable
+            adb shell svc data disable
+            adb shell svc wifi enable
+            adb shell svc wifi disable
+ 
+      In the context of interrupt testing, I can also mimick a call on an emulator:
+            
+            adb shell am start -a android.intent.action.CALL
+ 
 	
 - For example, send 1000 random clicks and touches to the app:
 	
