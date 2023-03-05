@@ -53,7 +53,7 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 
 ✰ [<code>adb logcat</code>](https://github.com/lana-20/adb-logcat-options-filters) - Displays the logcat output for the connected device, which can be helpful for debugging.
 
-✰ <code>adb shell</code> - Opens a shell on the connected device, allowing me to run commands on the device directly.
+✰ [<code>adb shell</code>](https://github.com/lana-20/android-shell) - Opens a shell on the connected device, allowing me to run commands on the device directly.
 	
 - For example, on a physical Android device ADB runs in a Secure mode. In order to access the device shell I first have to switch to the ADB root user with command <code>adb root</code> or <code>adb shell su</code>. An emulator runs in a Unsecure mode and hence doesn't require root access but the Switch User <code>su</code> binary is available in an emulator's /system/xbin/su directory. On a production build, for example, on my OnePlus phone this folder is empty.
 	
