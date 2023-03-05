@@ -54,6 +54,13 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 ✰ [<code>adb logcat</code>](https://github.com/lana-20/adb-logcat-options-filters) - Displays the logcat output for the connected device, which can be helpful for debugging.
 
 ✰ <code>adb shell</code> - Opens a shell on the connected device, allowing me to run commands on the device directly.
+	
+- For example, on a physical Android device ADB runs in a Secure mode. In order to access the device shell I first have to switch to the ADB root user with command <code>adb root</code> or <code>adb shell su</code>. An emulator runs in a Unsecure mode and hence doesn't require root access.
+	
+	<img width="400" alt="Screenshot 2023-03-04 at 6 54 25 PM" src="https://user-images.githubusercontent.com/70295997/222940211-6dd50fbd-0761-4100-afa4-ca6a884ef6f5.png">
+	
+
+
   - [ ] When I conduct interruption testing, I use the <code>adb shell</code> util to turn the mobile and WiFi service networks on and off. For example:
       
             adb shell svc data enable
@@ -87,7 +94,7 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 
 ✰ <code>adb reboot</code> - Reboots the connected device.
 	
-- For example:
+- For example, I can choose to reboot my device fully or to reboot it to <code>bootloader</code> or <code>recovery</code>. Or I can choose to reboot it to <code>sideload</code>, which is a new system image provided by Google for the line Nexus devices.:
 	
 		adb reboot bootloader
 		adb reboot recovery
