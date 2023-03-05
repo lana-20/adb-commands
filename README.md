@@ -84,7 +84,7 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 	
 ✰ <code>adb -d shell ip addr show wlan0</code> - Finds the device's IP address. Alternatively, I can search in the phone settings.
 	
-✰ <code>adb tcpip 5555</code> - Sets the target device to listen for a TCP/IP connection on port 5555.
+✰ <code>adb tcpip 5555</code> - Sets the target device to listen for a TCP/IP connection on port 5555, when connecting to a device over Wi-Fi .
 	
 ✰ <code>adb connect device_ip_address:5555</code> - Connects to the device by its IP address.
 	
