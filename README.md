@@ -196,7 +196,9 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
 - For example, send 1000 random clicks and touches to the app:
 	
         adb shell monkey -p com.appiumpro.the_app -v 1000
-	
+
+✰ <code>adb shell settings put secure enabled_accessibility_services</code> - Uses TalkBack with ADB for [accessibility](https://github.com/lana-20/accessibility-testing) testing.
+
 ✰ <code>exit</code> - Exits an interactive shell.
 	
 ## <img src="https://user-images.githubusercontent.com/70295997/222665055-a70b67a5-bd18-4359-b08a-18523b7e7d2c.png" width=40> [Take a screenshot](https://github.com/lana-20/adb-shell-screencap)
