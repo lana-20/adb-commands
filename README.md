@@ -55,7 +55,7 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 
 ✰ <code>adb shell</code> - Opens a shell on the connected device, allowing me to run commands on the device directly.
 	
-- For example, on a physical Android device ADB runs in a Secure mode. In order to access the device shell I first have to switch to the ADB root user with command <code>adb root</code> or <code>adb shell su</code>. An emulator runs in a Unsecure mode and hence doesn't require root access.
+- For example, on a physical Android device ADB runs in a Secure mode. In order to access the device shell I first have to switch to the ADB root user with command <code>adb root</code> or <code>adb shell su</code>. An emulator runs in a Unsecure mode and hence doesn't require root access but the Switch User <code>su</code> binary is available in an emulator's /system/xbin/su directory. On a production build, for example, on my OnePlus phone this folder is empty.
 	
 	<img width="400" alt="Screenshot 2023-03-04 at 6 54 25 PM" src="https://user-images.githubusercontent.com/70295997/222940211-6dd50fbd-0761-4100-afa4-ca6a884ef6f5.png">
 	
