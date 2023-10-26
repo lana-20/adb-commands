@@ -191,7 +191,7 @@ ADB Shell commands provide access to a Unix Shell that runs a command directly o
             adb shell svc wifi enable
             adb shell svc wifi disable
  
-      In the context of interrupt testing, I can also mimick a call on an emulator:
+      In the context of interrupt testing, I can also mimic a call on an emulator:
             
             adb shell am start -a android.intent.action.CALL
  
@@ -318,12 +318,12 @@ __Mimic a disabled battery charge__
           USB powered: false
 
 __For a rooted device:__
-- Enable battery Charging (mimic that device is charging, event if it's not -> simulate the uncharged state of the phone)
+- Enable battery Charging (mimic that device is charging, even if it's not -> simulate the uncharged state of the phone)
   - _adb shell dumpsys battery set ac 1_
   - _adb shell dumpsys battery set usb 1_
   - _adb shell dumpsys battery set wireless 1_
 
-- Disable battery Charging (mimic that device isn't charging, event if it is)
+- Disable battery Charging (mimic that device isn't charging, even if it is)
    - _adb shell dumpsys battery set ac 0_
    - _adb shell dumpsys battery set usb 0_
    - _adb shell dumpsys battery set wireless 0_
