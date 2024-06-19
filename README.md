@@ -383,3 +383,5 @@ Review the ADB and AAPT approaches [here](https://github.com/lana-20/android-pac
 [Android Doze mode is enabled and restored using commands](https://blog.csdn.net/zyp009/article/details/78456906)
 
 [ADB Shell Commands List and Detailed Cheat Sheet](https://technastic.com/adb-shell-commands-list/)
+
+[Adb useful commands list](https://gist.github.com/Pulimet/5013acf2cd5b28e55036c82c91bd56d8#file-adbcommands)
