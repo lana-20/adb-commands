@@ -90,6 +90,8 @@ Here is a list of some **common** ADB (Android Debug Bridge) **commands** that I
 	
 ✰ [<code>adb shell setprop debug.layout true</code>](https://github.com/lana-20/adb-debug-layout)- Turns on the debug mode.
 
+✰ <code>adb -e emu finger touch 1</code>- Enables biometric authentication on an emulator.
+
 ✰ <code>adb --help</code> - Yields a detailed list of all supported adb commands.
 
 These are just a few examples of the many ADB commands that are available. [Android documentation](https://developer.android.com/studio/command-line/adb) has a complete list of ADB commands.
